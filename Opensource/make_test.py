@@ -2,6 +2,7 @@
 import pygame
 import menu
 import interface
+import GameOver
 
 
 # 파이게임 초기화, 화면설정(해상도 1280*720)
@@ -61,4 +62,5 @@ while True:
                 elif position[1] > 576 and position[1] <704 :
                     pygame.quit()
                     exit(0)
+
 

@@ -1,4 +1,6 @@
 import pygame
+from os import unlink
+
 def print_click(screen,x_pos,y_pos):
 
     click = pygame.image.load("image/get/click.png")
@@ -14,3 +16,28 @@ def print_check(screen,x_pos,y_pos):
 
     screen.blit(check,(x_pos,y_pos))
     return 1
+
+def what_is_big(x,y,z,d):
+    num = [x,y,z,d]
+    num.sort(reverse=True)
+    renum = [num[0],num[1],num[2]]
+    return renum
+
+def saveinf(ranklist,playerinf,playerscore) :
+    unlink("Ranking/Rank1.TXT")
+    unlink("Ranking/Rank2.TXT")
+    unlink("Ranking/Rank3.TXT")
+
+    for j in range(0, 4, 1):
+        if (int(ranklist[0]) == int(playerscore[j])):
+            Fp = open("Ranking/Rank1.TXT", "w")
+            Fp.write(playerinf[j])
+            Fp.close()
+        if (int(ranklist[1]) == int(playerscore[j])):
+            Fp = open("Ranking/Rank2.TXT", "w")
+            Fp.write(playerinf[j])
+            Fp.close()
+        if (int(ranklist[2]) == int(playerscore[j])):
+            Fp = open("Ranking/Rank3.TXT", "w")
+            Fp.write(playerinf[j])
+            Fp.close()
