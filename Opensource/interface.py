@@ -1,6 +1,9 @@
 import pygame
 from os import unlink
 
+
+# Copyright : 노관태 - 코드 분할해둔곳들
+
 def print_click(screen,x_pos,y_pos):
 
     click = pygame.image.load("image/get/click.png")

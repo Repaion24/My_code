@@ -3,6 +3,9 @@ from pygame.locals import *
 from os import unlink
 import interface
 
+
+# Copyright : 노관태 - 게임오버화면 구현 및 랭킹 정렬후 파일 입출력
+
 def GameOver (screen,score,Health,gold) :
 
     up = "\n"

@@ -19,8 +19,8 @@ menu3 = pygame.image.load("image/menu/menu3.png")
 click = pygame.image.load("image/get/click.png")
 
 
-# 계속해서 화면 유지
 
+# Copyright : 노관태 - 메인메뉴 구현
 while True:
     # 화면 초기화
     screen.fill((0,0,0))
@@ -32,6 +32,8 @@ while True:
     screen.blit(menu2, (192, 416))
     screen.blit(menu3, (192, 576))
 
+
+    #마우스가 해당 위치에 올라갔을때
     position = pygame.mouse.get_pos()
     if position[0] > 192 and position[0] < 1088:
         if position[1] > 256 and position[1] < 384:
@@ -51,7 +53,7 @@ while True:
             pygame.quit()
             exit(0)
 
-    # 마우스 클릭시
+    # 마우스 클릭시 발생 이밴트
         if event.type == pygame.MOUSEBUTTONDOWN:
             position = pygame.mouse.get_pos()
             if position[0] >192 and position[0] < 1088 :

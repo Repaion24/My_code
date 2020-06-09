@@ -2,6 +2,8 @@ import pygame
 import interface
 import GameOver
 
+# Copyright : 노관태 - 메뉴1 구현 - 맵 선택화면
+
 
 def start_menu1 (screen):
     menu1_back = pygame.image.load("image/background/menu1_back.png")
@@ -9,16 +11,14 @@ def start_menu1 (screen):
     tutorial = pygame.image.load("image/map/tutorial.png")
     map1 = pygame.image.load("image/map/map1.png")
     map2 = pygame.image.load("image/map/map2.png")
-    map3 = pygame.image.load("image/map/map3.png")
 
 
     while True:
         screen.blit(menu1_back, (0, 0))
         screen.blit(menu4, (192, 576))
-        screen.blit(tutorial, (51,128))
-        screen.blit(map1, (358, 128))
-        screen.blit(map2, (665, 128))
-        screen.blit(map3, (972, 128))
+        screen.blit(tutorial, (128,128))
+        screen.blit(map1, (128+256+128, 128))
+        screen.blit(map2, (128+256+128+256+128, 128))
 
         position = pygame.mouse.get_pos()
         if position[0] > 384 and position[0] < 896:
@@ -26,14 +26,12 @@ def start_menu1 (screen):
                 interface.print_click(screen,64,576)
 
         if position[1] > 128 and position[1] < 384:
-            if position[0] > 51 and position[0] < 307:
-                interface.print_check(screen,51,128)
-            elif position[0] > 358 and position[0] < 614:
-                interface.print_check(screen,358,128)
-            elif position[0] > 665 and position[0] < 921:
-                interface.print_check(screen,665,128)
-            elif position[0] > 972 and position[0] < 1228:
-                interface.print_check(screen,972,128)
+            if position[0] > 128 and position[0] < 128+256:
+                interface.print_check(screen,128,128)
+            elif position[0] >128+256+128 and position[0] < 128+256+128+256:
+                interface.print_check(screen,128+256+128,128)
+            elif position[0] > 128+256+128+256+128 and position[0] < 128+256+128+256+128+256:
+                interface.print_check(screen,128+256+128+256+128,128)
 
 
         pygame.display.flip()
@@ -50,19 +48,17 @@ def start_menu1 (screen):
                         return 1
 
                 if position[1] > 128 and position[1] < 384:
-                    if position[0] > 51 and position[0] < 307:
+                    if position[0] > 128 and position[0] < 128+256:
                         GameOver.GameOver(screen,95000,8,1200)
                         return 1
-                    elif position[0] > 358 and position[0] < 614:
+                    elif position[0] > 128 + 256 + 128 and position[0] < 128 + 256 + 128 + 256:
                         pass
-                    elif position[0] > 384 and position[0] < 921:
-                        pass
-                    elif position[0] > 972 and position[0] < 1228:
+                    elif position[0] > 128 + 256 + 128 and position[0] < 128 + 256 + 128 + 256:
                         pass
 
 
 
-
+# Copyright : 노관태 - 메뉴2 구현 - 랭킹 파일 입출력
 
 def start_menu2 (screen):
     menu2_back = pygame.image.load("image/background/menu1_back.png")
