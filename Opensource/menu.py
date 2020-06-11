@@ -1,6 +1,7 @@
 import pygame
 import interface
 import GameOver
+import Map_1_start
 
 # Copyright : 노관태 - 메뉴1 구현 - 맵 선택화면
 
@@ -42,6 +43,13 @@ def start_menu1 (screen):
                 exit(0)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
+                pygame.mixer.init()
+                pygame.mixer.music.load("sound/click.wav")
+                pygame.mixer.music.set_volume(1)  # 1 ~ 0.1
+
+                pygame.mixer.music.play()
+
+                pygame.mixer.Sound("sound/click.wav")
                 position = pygame.mouse.get_pos()
                 if position[0] > 384 and position[0] < 896:
                     if position[1] > 576 and position[1] < 704:
@@ -52,7 +60,8 @@ def start_menu1 (screen):
                         GameOver.GameOver(screen,95000,8,1200)
                         return 1
                     elif position[0] > 128 + 256 + 128 and position[0] < 128 + 256 + 128 + 256:
-                        pass
+                        Map_1_start.Map_1_starting(screen)
+                        return 1
                     elif position[0] > 128 + 256 + 128 and position[0] < 128 + 256 + 128 + 256:
                         pass
 
@@ -156,6 +165,13 @@ def start_menu2 (screen):
                 exit(0)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
+                pygame.mixer.init()
+                pygame.mixer.music.load("sound/click.wav")
+                pygame.mixer.music.set_volume(1)  # 1 ~ 0.1
+
+                pygame.mixer.music.play()
+
+                pygame.mixer.Sound("sound/click.wav")
                 position = pygame.mouse.get_pos()
                 if position[0] > 384 and position[0] < 896:
                     if position[1] > 576 and position[1] < 704:
